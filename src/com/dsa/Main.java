@@ -1,67 +1,54 @@
 package com.dsa;
 
-import com.dsa.algorithms.*;
-import com.dsa.algorithms.binaryTree.FindLongestConsecutiveSequence;
-import com.dsa.algorithms.binaryTree.binarySearchTree.BSTOperations;
-import com.dsa.algorithms.dijkstraAlgorithm.DijkstraAlgorithm;
-import com.dsa.algorithms.dynamicProgramming.CoinDenominationFormation;
-import com.dsa.algorithms.dynamicProgramming.SubsetEqualToSum;
-import com.dsa.algorithms.foobar.*;
-import com.dsa.algorithms.strings.FindReverseOfSentenceKeepingEachWordIntact;
-import com.dsa.algorithms.strings.LongestCommonSubstringWithNonRepeatingCharacters;
-import com.dsa.algorithms.strings.LongestPalindromicSubstring;
-import com.dsa.algorithms.strings.ShortestWayToFormString;
-import com.dsa.algorithms.temp.*;
-import com.dsa.datastructures.LinkedList;
-import com.dsa.graph.BFS;
+import com.dsa.bitwise.FindMaximumXOR;
 import com.dsa.graph.DFS;
 import com.dsa.graph.Vertex;
-import com.dsa.sarching.BinarySearchWithIteration;
-import com.dsa.sarching.BinarySearchWithRecursion;
-import com.dsa.sorting.HeapSort;
-import com.dsa.sorting.MergeSort;
-import com.dsa.sorting.QuickSort;
-import com.dsa.sorting.RadixSort;
-import com.sun.jdi.ShortValue;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-import static com.dsa.algorithms.strings.DifferenceOfTwoTimes.difference;
-
 public class Main {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
+
+
+        System.out.println("================= SAMPLE COMMAND LINE EXECUTION WITH DUMMY TEST CASES ====================");
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        while (true)
+        {
+            System.out.println("Enter any of the following for lookup");
+            System.out.println("1./tArrays Problems");
+            System.out.println("2./tStrings");
+            System.out.println("3./tSorting Problems");
+            System.out.println("0 to Quit");
+
+            int choice = Integer.parseInt(bufferedReader.readLine());
+
+            switch (choice)
+            {
+                case 0:
+                    System.out.println("Thank you! Do practice more! Way to go!!!!");
+                    System.exit(0);
+                    break;
+                case 1:
+
+            }
+        }
+
         // write your code here
 //        MergeSort.mergeSort(new int[]{10,9,8,7,6,5,4,3,2,1});
 
 //        QuickSort.quickSort(new int[]{70,10,30,20,90,25});
 
 
+//        SpecialMatrix.matrixProcess(3);
 
 
 
-        Vertex A = new Vertex("A");
-        Vertex B = new Vertex("B");
-        Vertex C = new Vertex("C");
-        Vertex D = new Vertex("D");
-        Vertex E = new Vertex("E");
-        Vertex F = new Vertex("F");
-        Vertex G = new Vertex("G");
-        Vertex H = new Vertex("H");
-
-
-        A.addAdjacency(B);
-        A.addAdjacency(C);
-        A.addAdjacency(D);
-
-        B.addAdjacency(E);
-        B.addAdjacency(F);
-
-        E.addAdjacency(G);
-        F.addAdjacency(H);
 
 //        DFS.traverseDFS(A);
 
@@ -107,7 +94,20 @@ public class Main {
 //        System.out.println(CreateHeap.createMinHeap(new int[]{5, 1, 2, 6, 10, 15, 30, 3}));
 
 //        KLargestElements.findKLargestElements(new int[]{5, 1, 2, 6, 10, 15, 30, 3}, 3);
+//        int n = 6; // 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+//        int sum = 1;
+//        System.out.println(isPrime(5));
+//        for (int i = 4; i <= n + 1; i++)
+//        {
+//            if (isPrime(i))
+//                sum+=1;
+//        }
+//        System.out.println(sum);
 
+//        FindMaximumXOR.findMaximumXOR(new int[]{4,7,18,16,14});
+//        System.out.println((x & (x-1)));
+//        System.out.println(KLargestElements.findKthLargestElements(new int[]{3,2,3,1,2,4,5,5,6}, 3));
+                    // 6 5 5 4 3 3 2 2 1
 //        System.out.println(difference("23:45","14:50"));
 //        System.out.println(CoinDenominationFormation.findNumberOfWaysToFormDenomination(new int[]{1,2,3},5));
 //        System.out.println(CoinDenominationFormation.findMinNumberOfWaysToFormDenomination(new int[]{1,2,3},5));
@@ -117,7 +117,6 @@ public class Main {
 //        System.out.println(BitwiseOperations.reverseBits(3));
 
 //        System.out.println(Arrays.toString(Heap.buildHeap(new int[]{5, 1, 2, 3, 4, 6})));
-//        HeapSorting.heapSort(new int[]{5,6,0,-1,-1,9,2,2,2,3,4});
 //        BSTOperations.constructBST(new int[]{100,200,25,50,75,150,12});
 //        RadixSort.performRadixSort(new int[]{5, 23, 145, 62, 78, 91});
 
@@ -157,7 +156,7 @@ public class Main {
 
 //        CircleOfStrings.run();
 
-        System.out.println(Integer.parseInt("00011"));
+//        System.out.println(Integer.parseInt("00011"));
     }
 
 
@@ -196,5 +195,16 @@ public class Main {
             System.out.print(DFS.stack.pop().name + "\t");
         }
 
+    }
+
+
+    static boolean isPrime(int n)
+    {
+        for (int i = 2; i <= Math.sqrt(n); i++)
+        {
+            if (n%i == 0)
+                return false;
+        }
+        return true;
     }
 }
