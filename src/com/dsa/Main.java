@@ -1,5 +1,6 @@
 package com.dsa;
 
+import com.dsa.arrays.*;
 import com.dsa.bitwise.FindMaximumXOR;
 import com.dsa.graph.DFS;
 import com.dsa.graph.Vertex;
@@ -7,6 +8,7 @@ import com.dsa.graph.Vertex;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -18,24 +20,67 @@ public class Main {
         System.out.println("================= SAMPLE COMMAND LINE EXECUTION WITH DUMMY TEST CASES ====================");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        while (true)
-        {
+        while (true) {
             System.out.println("Enter any of the following for lookup");
-            System.out.println("1./tArrays Problems");
-            System.out.println("2./tStrings");
-            System.out.println("3./tSorting Problems");
+            System.out.println("1.\tArrays Problems");
+            System.out.println("2.\tStrings");
+            System.out.println("3.\tSorting Problems");
             System.out.println("0 to Quit");
+            System.out.println();
 
             int choice = Integer.parseInt(bufferedReader.readLine());
 
-            switch (choice)
-            {
+            switch (choice) {
                 case 0:
-                    System.out.println("Thank you! Do practice more! Way to go!!!!");
-                    System.exit(0);
+                    exitProgram();
                     break;
                 case 1:
+                    while (true) {
+                        System.out.println("Enter any of the following to look up Array problems");
+                        System.out.println("1. Find First Duplicate");
+                        System.out.println("2. Find Longest SubArray by Sum");
+                        System.out.println("3. Find Missing Number");
+                        System.out.println("4. Find Range Pairs");
+                        System.out.println("5. Find Product of all numbers except self");
+                        System.out.println("\n999 to Quit");
+                        System.out.println("0 to Go Back to Previous Options");
 
+                        int arrayChoice = Integer.parseInt(bufferedReader.readLine());
+                        int ar[];
+                        boolean shouldBreakLoop = false;
+                        switch (arrayChoice) {
+                            case 999:
+                                exitProgram();
+                                break;
+                            case 0:
+                                shouldBreakLoop = true;
+                                break;
+                            case 1:
+                                ar = new int[]{2, 3, 3, 4, 5, 5, 6, 6};
+                                System.out.println(FindFirstDuplicate.findFirstDuplicate(ar));
+                                break;
+                            case 2:
+                                ar = new int[]{2, 3, 4, 4, 5, 5, 6, 6};
+                                System.out.println(FindLongestSubArrayBySum.findLongestSubArrayBySum(ar, 14));
+                                break;
+                            case 3:
+                                ar = new int[]{1, 3, 4, 5, 6, 8};
+                                System.out.println(FindMissingNumber.missingNumber(ar));
+                                break;
+                            case 4:
+                                ar = new int[]{1, 2, 3, 4, 5, 6};
+                                System.out.println(Arrays.toString(FindRangePairs.findRangePairs(ar)));
+                                break;
+                            case 5:
+                                ar = new int[]{1, 2, 3, 4, 5, 6};
+                                ProductExceptSelf.productExceptSelf(ar);
+                                break;
+
+                        }
+
+                        if (shouldBreakLoop)
+                            break;
+                    }
             }
         }
 
@@ -46,8 +91,6 @@ public class Main {
 
 
 //        SpecialMatrix.matrixProcess(3);
-
-
 
 
 //        DFS.traverseDFS(A);
@@ -107,7 +150,7 @@ public class Main {
 //        FindMaximumXOR.findMaximumXOR(new int[]{4,7,18,16,14});
 //        System.out.println((x & (x-1)));
 //        System.out.println(KLargestElements.findKthLargestElements(new int[]{3,2,3,1,2,4,5,5,6}, 3));
-                    // 6 5 5 4 3 3 2 2 1
+        // 6 5 5 4 3 3 2 2 1
 //        System.out.println(difference("23:45","14:50"));
 //        System.out.println(CoinDenominationFormation.findNumberOfWaysToFormDenomination(new int[]{1,2,3},5));
 //        System.out.println(CoinDenominationFormation.findMinNumberOfWaysToFormDenomination(new int[]{1,2,3},5));
@@ -160,8 +203,6 @@ public class Main {
     }
 
 
-
-
     public static void performTopologicalSort() {
         List<Vertex> graph = new ArrayList<>();
 
@@ -198,11 +239,14 @@ public class Main {
     }
 
 
-    static boolean isPrime(int n)
-    {
-        for (int i = 2; i <= Math.sqrt(n); i++)
-        {
-            if (n%i == 0)
+    static void exitProgram() {
+        System.out.println("Thank you! Do practice more! Way to go!!!!");
+        System.exit(0);
+    }
+
+    static boolean isPrime(int n) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0)
                 return false;
         }
         return true;
