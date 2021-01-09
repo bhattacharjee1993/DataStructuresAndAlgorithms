@@ -54,7 +54,7 @@ public class Main {
                                 break;
                             case 2:
                                 ar = new int[]{2, 3, 4, 4, 5, 5, 6, 6};
-                                System.out.println(FindLongestSubArrayBySum.findLongestSubArrayBySum(ar, 14));
+                                System.out.println(FindLongestSubArrayBySum.findLongestSubArrayBySum(ar, 13));
                                 break;
                             case 3:
                                 ar = new int[]{1, 3, 4, 5, 6, 8};
