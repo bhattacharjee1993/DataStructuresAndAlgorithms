@@ -1,6 +1,8 @@
 package com.dsa;
 
 import com.dsa.arrays.*;
+import com.dsa.dynamicProgramming.MaxSubsetSumNoAdjacent;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -18,6 +20,7 @@ public class Main {
             System.out.println("1.\tArrays Problems");
             System.out.println("2.\tStrings");
             System.out.println("3.\tSorting Problems");
+            System.out.println("4.\tDynamic Programming Problems");
             System.out.println("0 to Quit");
             System.out.println();
 
@@ -67,6 +70,32 @@ public class Main {
                             case 5:
                                 ar = new int[]{1, 2, 3, 4, 5, 6};
                                 ProductExceptSelf.productExceptSelf(ar);
+                                break;
+                        }
+
+                        if (shouldBreakLoop)
+                            break;
+                    }
+                case 4:
+                    while (true) {
+                        System.out.println("Enter any of the following to look up Dynamic Programming problems");
+                        System.out.println("1. Find Maximum Subset Sum with No Adjacent elemnts");
+                        System.out.println("\n999 to Quit");
+                        System.out.println("0 to Go Back to Previous Options");
+
+                        int arrayChoice = Integer.parseInt(bufferedReader.readLine());
+                        int ar[];
+                        boolean shouldBreakLoop = false;
+                        switch (arrayChoice) {
+                            case 999:
+                                exitProgram();
+                                break;
+                            case 0:
+                                shouldBreakLoop = true;
+                                break;
+                            case 1:
+                                ar = new int[]{80, 70, 100, 120};
+                                System.out.println(MaxSubsetSumNoAdjacent.findMaxSumOfSubsetExcludingAdjacent(ar));
                                 break;
                         }
 
