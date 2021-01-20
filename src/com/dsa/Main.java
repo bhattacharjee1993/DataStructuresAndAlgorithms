@@ -2,6 +2,8 @@ package com.dsa;
 
 import com.dsa.arrays.*;
 import com.dsa.dynamicProgramming.MaxSubsetSumNoAdjacent;
+import com.dsa.dynamicProgramming.MinimumNumberOfCoinsToFormDenomination;
+import com.dsa.dynamicProgramming.NumberOfWaysToMakeCoinDenomination;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -80,6 +82,8 @@ public class Main {
                     while (true) {
                         System.out.println("Enter any of the following to look up Dynamic Programming problems");
                         System.out.println("1. Find Maximum Subset Sum with No Adjacent elemnts");
+                        System.out.println("2. Find Number of ways to form denomination value");
+                        System.out.println("3. Find Minimum Number of Coins to form denomination value");
                         System.out.println("\n999 to Quit");
                         System.out.println("0 to Go Back to Previous Options");
 
@@ -96,6 +100,14 @@ public class Main {
                             case 1:
                                 ar = new int[]{80, 70, 100, 120};
                                 System.out.println(MaxSubsetSumNoAdjacent.findMaxSumOfSubsetExcludingAdjacent(ar));
+                                break;
+                            case 2:
+                                ar = new int[]{1,5,10};
+                                System.out.println(NumberOfWaysToMakeCoinDenomination.findNumberOfWaysToFormDenomination(10, ar));
+                                break;
+                            case 3:
+                                ar = new int[]{1,2,4};
+                                System.out.println(MinimumNumberOfCoinsToFormDenomination.findMinimumNumberOfCoinsToFormDenomination(ar, 5));
                                 break;
                         }
 
