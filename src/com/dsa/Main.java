@@ -40,6 +40,7 @@ public class Main {
                         System.out.println("3. Find Missing Number");
                         System.out.println("4. Find Range Pairs");
                         System.out.println("5. Find Product of all numbers except self");
+                        System.out.println("6. Find minimum X To make cumulative sum positive");
                         System.out.println("\n999 to Quit");
                         System.out.println("0 to Go Back to Previous Options");
 
@@ -72,6 +73,10 @@ public class Main {
                             case 5:
                                 ar = new int[]{1, 2, 3, 4, 5};
                                 System.out.println(Arrays.toString(ProductExceptSelf.productExceptSelf(ar)));
+                                break;
+                            case 6:
+                                ar = new int[]{3, -6, 5, -2, 1};
+                                System.out.println(FindMinimumXToMakeArrayPositive.findMinValueOfX(ar));
                                 break;
                         }
 
