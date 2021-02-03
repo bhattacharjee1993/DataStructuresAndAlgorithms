@@ -13,11 +13,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-
         System.out.println("================= SAMPLE COMMAND LINE EXECUTION WITH DUMMY TEST CASES ====================");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        while (true) {
+        boolean shouldBreakMainLoop = false;
+        do {
             System.out.println("Enter any of the following for lookup");
             System.out.println("1.\tArrays Problems");
             System.out.println("2.\tStrings");
@@ -30,7 +30,7 @@ public class Main {
 
             switch (choice) {
                 case 0:
-                    exitProgram();
+                    shouldBreakMainLoop = true;
                     break;
                 case 1:
                     while (true) {
@@ -70,8 +70,8 @@ public class Main {
                                 System.out.println(Arrays.toString(FindRangePairs.findRangePairs(ar)));
                                 break;
                             case 5:
-                                ar = new int[]{1, 2, 3, 4, 5, 6};
-                                ProductExceptSelf.productExceptSelf(ar);
+                                ar = new int[]{1, 2, 3, 4, 5};
+                                System.out.println(Arrays.toString(ProductExceptSelf.productExceptSelf(ar)));
                                 break;
                         }
 
@@ -102,21 +102,23 @@ public class Main {
                                 System.out.println(MaxSubsetSumNoAdjacent.findMaxSumOfSubsetExcludingAdjacent(ar));
                                 break;
                             case 2:
-                                ar = new int[]{1,5,10};
+                                ar = new int[]{1, 5, 10};
                                 System.out.println(NumberOfWaysToMakeCoinDenomination.findNumberOfWaysToFormDenomination(10, ar));
                                 break;
                             case 3:
-                                ar = new int[]{1,2,4};
+                                ar = new int[]{1, 2, 4};
                                 System.out.println(MinimumNumberOfCoinsToFormDenomination.findMinimumNumberOfCoinsToFormDenomination(ar, 5));
                                 break;
                         }
 
-                        
+
                         if (shouldBreakLoop)
                             break;
                     }
             }
-        }
+
+
+        } while (!shouldBreakMainLoop);
     }
 
     static void exitProgram() {
